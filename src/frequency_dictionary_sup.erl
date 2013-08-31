@@ -13,7 +13,7 @@
 %% API functions
 %% ===================================================================
 
-start_link(Languages) ->
+start_link([Languages]) ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, Languages).
 
 start_dictionary_dynamically(Lang) ->

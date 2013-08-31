@@ -104,7 +104,8 @@ code_change(_OldVsn, State, _Extra) ->
 
 binary_to_words(Text) ->
   % re:replace(<< " éabcd" /utf8 >> ," +"," ",[{return,binary}]).
-  CleanedUp = re:replace(Text, " +", " ",[{return,binary}, unicode]),
+  CleanedUp = re:replace(Text, "[,_?\\.-]+", " ",[{return,binary}, unicode, global]),
+  % CleanedUp = re:replace(Text, "[,_-?]+", " ",[{return,binary}, unicode]),
 
   % re:split(<<"Erlang ff ça va привет ée"/utf8>>," +",[{return,list}, unicode]).
   re:split(CleanedUp, " +",[{return, binary}, unicode]).

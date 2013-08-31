@@ -9,5 +9,5 @@
             ]},
   {registered, [frequency_dictionary_sup]}, % ???
   {applications, [kernel, stdlib]},
-  {mod, {frequency_dictionary_sup, [[en, nl, fr]]}}
+  {mod, {frequency_dictionary_app, [[en, nl, fr]]}}
  ]}.

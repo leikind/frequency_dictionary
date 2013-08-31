@@ -11,7 +11,8 @@
 
 % [en, fr, nl]
 start(_StartType, Languages) ->
-    frequency_dictionary:start_link(Languages).
+    % io:format("~p ~n", [Languages]),
+    frequency_dictionary_sup:start_link(Languages).
 
 stop(_State) ->
     ok.
